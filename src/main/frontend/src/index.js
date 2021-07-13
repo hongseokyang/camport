@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createProxyMiddleware } from 'http-proxy-middleware';
+
+
+createProxyMiddleware({
+    target: 'http://localhost:8090/api',
+    changeOrigin: true,
+});
 
 ReactDOM.render(
   <React.StrictMode>
